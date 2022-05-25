@@ -8,12 +8,17 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include MCAL/TIMER_1/subdir.mk
+-include MCAL/TIMER_0/subdir.mk
 -include MCAL/GIE/subdir.mk
 -include MCAL/EXTI/subdir.mk
 -include MCAL/DIO/subdir.mk
+-include MCAL/ADC/subdir.mk
+-include HAL/SERVO/subdir.mk
+-include HAL/LED/subdir.mk
 -include HAL/LCD/subdir.mk
 -include HAL/KPD/subdir.mk
--include HAL/CLCD/subdir.mk
+-include HAL/BUZZER/subdir.mk
 -include APP/subdir.mk
 -include subdir.mk
 -include objects.mk
@@ -35,17 +40,6 @@ endif
 
 -include ../makefile.defs
 
-OPTIONAL_TOOL_DEPS := \
-$(wildcard ../makefile.defs) \
-$(wildcard ../makefile.init) \
-$(wildcard ../makefile.targets) \
-
-
-BUILD_ARTIFACT_NAME := Smart_Home
-BUILD_ARTIFACT_EXTENSION := elf
-BUILD_ARTIFACT_PREFIX :=
-BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
-
 # Add inputs and outputs from these tool invocations to the build variables 
 LSS += \
 Smart_Home.lss \
@@ -58,32 +52,29 @@ sizedummy \
 
 
 # All Target
-all: main-build
-
-# Main-build Target
-main-build: Smart_Home.elf secondary-outputs
+all: Smart_Home.elf secondary-outputs
 
 # Tool invocations
-Smart_Home.elf: $(OBJS) $(USER_OBJS) makefile objects.mk $(OPTIONAL_TOOL_DEPS)
+Smart_Home.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: AVR C Linker'
 	avr-gcc -Wl,-Map,Smart_Home.map -mmcu=atmega32 -o "Smart_Home.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-Smart_Home.lss: Smart_Home.elf makefile objects.mk $(OPTIONAL_TOOL_DEPS)
+Smart_Home.lss: Smart_Home.elf
 	@echo 'Invoking: AVR Create Extended Listing'
 	-avr-objdump -h -S Smart_Home.elf  >"Smart_Home.lss"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Smart_Home.hex: Smart_Home.elf makefile objects.mk $(OPTIONAL_TOOL_DEPS)
+Smart_Home.hex: Smart_Home.elf
 	@echo 'Create Flash image (ihex format)'
 	-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Smart_Home.elf  "Smart_Home.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-sizedummy: Smart_Home.elf makefile objects.mk $(OPTIONAL_TOOL_DEPS)
+sizedummy: Smart_Home.elf
 	@echo 'Invoking: Print Size'
 	-avr-size --format=avr --mcu=atmega32 Smart_Home.elf
 	@echo 'Finished building: $@'
@@ -96,6 +87,7 @@ clean:
 
 secondary-outputs: $(LSS) $(FLASH_IMAGE) $(SIZEDUMMY)
 
-.PHONY: all clean dependents main-build
+.PHONY: all clean dependents
+.SECONDARY:
 
 -include ../makefile.targets

@@ -6,8 +6,10 @@
 
 /*Includes*/
 
-#include "../../LIB/BIT_MATH.h"
-#include "../../LIB/STD_TYPES.h"
+#include"../../LIB/STD_TYPES.h"
+#include"../../LIB/BIT_MATH.h"
+
+
 #include "DIO_interface.h"
 #include "DIO_private.h"
 
@@ -165,50 +167,36 @@ u8 MDIO_u8GetPinValue(u8 copy_u8PinId , u8 copy_u8PortId)
 
 void MDIO_voidSetPortMode(u8 copy_u8PortId , u8 copy_u8PortMode)
 {
-	/*check that PortId is in Range*/
-	if(copy_u8PortId <= DIO_PORTD)
-	{
-		/*switch on PortId*/
+		/*Switch on PortId*/
 		switch(copy_u8PortId)
 		{
-			/*case PORTA Assign The Value to PORTA register*/
+			/*case PORTA Clear DDRA register*/
 			case DIO_PORTA:	ASSIGN_REG(DDRA_REG,copy_u8PortMode);break;
-			/*case PORTB Assign The Value to PORTB register*/
+			/*case PORTA Clear DDRA register*/
 			case DIO_PORTB:	ASSIGN_REG(DDRB_REG,copy_u8PortMode);break;
-			/*case PORTC Assign The Value to PORTC register*/
+			/*case PORTA Clear DDRA register*/
 			case DIO_PORTC:	ASSIGN_REG(DDRC_REG,copy_u8PortMode);break;
-			/*case PORTD Assign The Value to PORTD register*/
+			/*case PORTA Clear DDRA register*/
 			case DIO_PORTD: ASSIGN_REG(DDRD_REG,copy_u8PortMode);break;
 		}
-	}
-	else
-	{
-		//report error massage
-	}
+
 }
 
 void MDIO_voidSetPortValue(u8 copy_u8PortId , u8 copy_u8PortValue)
 {
-	/*check that PortId is in Range*/
-	if(copy_u8PortId <= DIO_PORTD)
-	{
-			/*switch on PortId*/
-			switch(copy_u8PortId)
-			{
-			    /*case PORTA Assign The Value to PORTA register*/
-				case DIO_PORTA:	ASSIGN_REG(PORTA_REG,copy_u8PortValue);break;
-				/*case PORTB Assign The Value to PORTB register*/
-				case DIO_PORTB:	ASSIGN_REG(PORTB_REG,copy_u8PortValue);break;
-				/*case PORTC Assign The Value to PORTC register*/
-				case DIO_PORTC:	ASSIGN_REG(PORTC_REG,copy_u8PortValue);break;
-				/*case PORTD Assign The Value to PORTD register*/
-				case DIO_PORTD: ASSIGN_REG(PORTD_REG,copy_u8PortValue);break;
-			}
-	}
-	else
-	{
-		//report error massage
-	}	
+		/*switch on PortId*/
+		switch(copy_u8PortId)
+		{
+		    /*case PORTA Assign The Value to PORTA register*/
+			case DIO_PORTA:	ASSIGN_REG(PORTA_REG,copy_u8PortValue);break;
+			/*case PORTB Assign The Value to PORTB register*/
+			case DIO_PORTB:	ASSIGN_REG(PORTB_REG,copy_u8PortValue);break;
+			/*case PORTC Assign The Value to PORTC register*/
+			case DIO_PORTC:	ASSIGN_REG(PORTC_REG,copy_u8PortValue);break;
+			/*case PORTD Assign The Value to PORTD register*/
+			case DIO_PORTD: ASSIGN_REG(PORTD_REG,copy_u8PortValue);break;
+			default:break;
+		}
 }
 
 void MDIO_voidTogPortValue(u8 copy_u8PortId)

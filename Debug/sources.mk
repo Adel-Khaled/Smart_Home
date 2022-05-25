@@ -21,10 +21,15 @@ C_DEPS :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 APP \
-HAL/CLCD \
+HAL/BUZZER \
 HAL/KPD \
 HAL/LCD \
+HAL/LED \
+HAL/SERVO \
+MCAL/ADC \
 MCAL/DIO \
 MCAL/EXTI \
 MCAL/GIE \
+MCAL/TIMER_0 \
+MCAL/TIMER_1 \
 
