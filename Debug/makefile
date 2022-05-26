@@ -42,47 +42,47 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 LSS += \
-Smart_Home.lss \
+SMART_HOME_SYSTM.lss \
 
 FLASH_IMAGE += \
-Smart_Home.hex \
+SMART_HOME_SYSTM.hex \
 
 SIZEDUMMY += \
 sizedummy \
 
 
 # All Target
-all: Smart_Home.elf secondary-outputs
+all: SMART_HOME_SYSTM.elf secondary-outputs
 
 # Tool invocations
-Smart_Home.elf: $(OBJS) $(USER_OBJS)
+SMART_HOME_SYSTM.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: AVR C Linker'
-	avr-gcc -Wl,-Map,Smart_Home.map -mmcu=atmega32 -o "Smart_Home.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	avr-gcc -Wl,-Map,SMART_HOME_SYSTM.map -mmcu=atmega32 -o "SMART_HOME_SYSTM.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-Smart_Home.lss: Smart_Home.elf
+SMART_HOME_SYSTM.lss: SMART_HOME_SYSTM.elf
 	@echo 'Invoking: AVR Create Extended Listing'
-	-avr-objdump -h -S Smart_Home.elf  >"Smart_Home.lss"
+	-avr-objdump -h -S SMART_HOME_SYSTM.elf  >"SMART_HOME_SYSTM.lss"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Smart_Home.hex: Smart_Home.elf
+SMART_HOME_SYSTM.hex: SMART_HOME_SYSTM.elf
 	@echo 'Create Flash image (ihex format)'
-	-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Smart_Home.elf  "Smart_Home.hex"
+	-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex SMART_HOME_SYSTM.elf  "SMART_HOME_SYSTM.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-sizedummy: Smart_Home.elf
+sizedummy: SMART_HOME_SYSTM.elf
 	@echo 'Invoking: Print Size'
-	-avr-size --format=avr --mcu=atmega32 Smart_Home.elf
+	-avr-size --format=avr --mcu=atmega32 SMART_HOME_SYSTM.elf
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(FLASH_IMAGE)$(ELFS)$(OBJS)$(ASM_DEPS)$(S_DEPS)$(SIZEDUMMY)$(S_UPPER_DEPS)$(LSS)$(C_DEPS) Smart_Home.elf
+	-$(RM) $(FLASH_IMAGE)$(ELFS)$(OBJS)$(ASM_DEPS)$(S_DEPS)$(SIZEDUMMY)$(S_UPPER_DEPS)$(LSS)$(C_DEPS) SMART_HOME_SYSTM.elf
 	-@echo ' '
 
 secondary-outputs: $(LSS) $(FLASH_IMAGE) $(SIZEDUMMY)

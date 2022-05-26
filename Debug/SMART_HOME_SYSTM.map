@@ -53,7 +53,6 @@ Common symbol       size              file
 TIMER1_CALL_BACK    0x2               ./MCAL/TIMER_1/TIMER1_program.o
 TIMER0_CALL_BACK_2  0x2               ./MCAL/TIMER_0/TIMER0_program.o
 TIMER0_CALL_BACK    0x2               ./MCAL/TIMER_0/TIMER0_program.o
-u8KpdOutput         0x1               ./APP/main.o
 TIMER0_CALL_BACK_1  0x2               ./MCAL/TIMER_0/TIMER0_program.o
 
 Memory Configuration
@@ -176,7 +175,7 @@ LOAD d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x54b0
+.text           0x00000000     0x58fa
  *(.vectors)
  .vectors       0x00000000       0x54 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
                 0x00000000                __vectors
@@ -507,37 +506,37 @@ LOAD d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  .text.HBUZ_voidLong
                 0x00004352       0x22 ./HAL/BUZZER/BUZZER_program.o
                 0x00004352                HBUZ_voidLong
- .text.main     0x00004374       0xf4 ./APP/main.o
+ .text.main     0x00004374     0x112a ./APP/main.o
                 0x00004374                main
  .text.TempSensor
-                0x00004468       0xea ./APP/main.o
-                0x00004468                TempSensor
+                0x0000549e       0x9e ./APP/main.o
+                0x0000549e                TempSensor
  .text.LDR_On_LCD
-                0x00004552      0x314 ./APP/main.o
-                0x00004552                LDR_On_LCD
+                0x0000553c      0x252 ./APP/main.o
+                0x0000553c                LDR_On_LCD
  .text.OpenSystem
-                0x00004866      0xaf8 ./APP/main.o
-                0x00004866                OpenSystem
- .text.libgcc   0x0000535e       0x3e d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
-                0x0000535e                __mulsi3
- .text.libgcc   0x0000539c       0x28 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
-                0x0000539c                __udivmodhi4
- .text.libgcc   0x000053c4       0x44 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
-                0x000053c4                __udivmodsi4
- .text.libgcc   0x00005408       0x36 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodsi4.o)
-                0x00005408                __divmodsi4
- .text.libgcc   0x0000543e        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x0000543e        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
- .text.libgcc   0x0000543e        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
- .text.libgcc   0x0000543e       0x38 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
-                0x0000543e                __prologue_saves__
- .text.libgcc   0x00005476       0x36 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
-                0x00005476                __epilogue_restores__
-                0x000054ac                . = ALIGN (0x2)
+                0x0000578e       0x1a ./APP/main.o
+                0x0000578e                OpenSystem
+ .text.libgcc   0x000057a8       0x3e d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
+                0x000057a8                __mulsi3
+ .text.libgcc   0x000057e6       0x28 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+                0x000057e6                __udivmodhi4
+ .text.libgcc   0x0000580e       0x44 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+                0x0000580e                __udivmodsi4
+ .text.libgcc   0x00005852       0x36 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodsi4.o)
+                0x00005852                __divmodsi4
+ .text.libgcc   0x00005888        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00005888        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00005888        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00005888       0x38 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
+                0x00005888                __prologue_saves__
+ .text.libgcc   0x000058c0       0x36 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
+                0x000058c0                __epilogue_restores__
+                0x000058f6                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000054ac        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
-                0x000054ac                exit
-                0x000054ac                _exit
+ .fini9         0x000058f6        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x000058f6                exit
+                0x000058f6                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -556,11 +555,11 @@ LOAD d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000054ac        0x4 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .fini0         0x000058f6        0x4 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x000054b0                _etext = .
+                0x000058fa                _etext = .
 
-.data           0x00800060      0x1dc load address 0x000054b0
+.data           0x00800060      0x1ce load address 0x000058fa
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800060        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
@@ -602,109 +601,104 @@ LOAD d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  .data          0x0080011e      0x100 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clz.o)
                 0x0080011e                __clz_tab
  *(.data*)
- .data.passwordData
-                0x0080021e        0xa ./APP/main.o
-                0x0080021e                passwordData
- .data.WrongCounter
-                0x00800228        0x4 ./APP/main.o
-                0x00800228                WrongCounter
  *(.rodata)
  *(.rodata*)
  .rodata.C.2.1231
-                0x0080022c        0x3 ./HAL/KPD/KPD_PROG.o
+                0x0080021e        0x3 ./HAL/KPD/KPD_PROG.o
  .rodata.C.1.1230
-                0x0080022f        0x3 ./HAL/KPD/KPD_PROG.o
+                0x00800221        0x3 ./HAL/KPD/KPD_PROG.o
  .rodata.C.0.1229
-                0x00800232        0x9 ./HAL/KPD/KPD_PROG.o
+                0x00800224        0x9 ./HAL/KPD/KPD_PROG.o
  *(.gnu.linkonce.d*)
-                0x0080023c                . = ALIGN (0x2)
- *fill*         0x0080023b        0x1 00
-                0x0080023c                _edata = .
-                0x0080023c                PROVIDE (__data_end, .)
+                0x0080022e                . = ALIGN (0x2)
+ *fill*         0x0080022d        0x1 00
+                0x0080022e                _edata = .
+                0x0080022e                PROVIDE (__data_end, .)
 
-.bss            0x0080023c       0x34
-                0x0080023c                PROVIDE (__bss_start, .)
+.bss            0x0080022e       0x38
+                0x0080022e                PROVIDE (__bss_start, .)
  *(.bss)
- .bss           0x0080023c        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
- .bss           0x0080023c        0x0 ./MCAL/TIMER_1/TIMER1_program.o
- .bss           0x0080023c        0x0 ./MCAL/TIMER_0/TIMER0_program.o
- .bss           0x0080023c        0x0 ./MCAL/GIE/GIE_PROG.o
- .bss           0x0080023c        0x0 ./MCAL/EXTI/EXTI_PROG.o
- .bss           0x0080023c        0x0 ./MCAL/DIO/DIO_program.o
- .bss           0x0080023c        0x0 ./MCAL/ADC/ADC_program.o
- .bss           0x0080023c        0x0 ./HAL/SERVO/SERVO.o
- .bss           0x0080023c        0x0 ./HAL/LED/LED_program.o
- .bss           0x0080023c        0x0 ./HAL/LCD/LCD_program.o
- .bss           0x0080023c        0x0 ./HAL/KPD/KPD_PROG.o
- .bss           0x0080023c        0x0 ./HAL/BUZZER/BUZZER_program.o
- .bss           0x0080023c        0x0 ./APP/main.o
- .bss           0x0080023c        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
- .bss           0x0080023c        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
- .bss           0x0080023c        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
- .bss           0x0080023c        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodsi4.o)
- .bss           0x0080023c        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .bss           0x0080023c        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
- .bss           0x0080023c        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
- .bss           0x0080023c        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o)
- .bss           0x0080023c        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_addsub_sf.o)
- .bss           0x0080023c        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mul_sf.o)
- .bss           0x0080023c        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_gt_sf.o)
- .bss           0x0080023c        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_ge_sf.o)
- .bss           0x0080023c        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_lt_sf.o)
- .bss           0x0080023c        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_sf_to_si.o)
- .bss           0x0080023c        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_thenan_sf.o)
- .bss           0x0080023c        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_usi_to_sf.o)
- .bss           0x0080023c        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
- .bss           0x0080023c        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
- .bss           0x0080023c        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clzsi2.o)
- .bss           0x0080023c        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_pack_sf.o)
- .bss           0x0080023c        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_unpack_sf.o)
- .bss           0x0080023c        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fpcmp_parts_sf.o)
- .bss           0x0080023c        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clz.o)
+ .bss           0x0080022e        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+ .bss           0x0080022e        0x0 ./MCAL/TIMER_1/TIMER1_program.o
+ .bss           0x0080022e        0x0 ./MCAL/TIMER_0/TIMER0_program.o
+ .bss           0x0080022e        0x0 ./MCAL/GIE/GIE_PROG.o
+ .bss           0x0080022e        0x0 ./MCAL/EXTI/EXTI_PROG.o
+ .bss           0x0080022e        0x0 ./MCAL/DIO/DIO_program.o
+ .bss           0x0080022e        0x0 ./MCAL/ADC/ADC_program.o
+ .bss           0x0080022e        0x0 ./HAL/SERVO/SERVO.o
+ .bss           0x0080022e        0x0 ./HAL/LED/LED_program.o
+ .bss           0x0080022e        0x0 ./HAL/LCD/LCD_program.o
+ .bss           0x0080022e        0x0 ./HAL/KPD/KPD_PROG.o
+ .bss           0x0080022e        0x0 ./HAL/BUZZER/BUZZER_program.o
+ .bss           0x0080022e        0x0 ./APP/main.o
+ .bss           0x0080022e        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
+ .bss           0x0080022e        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+ .bss           0x0080022e        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+ .bss           0x0080022e        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodsi4.o)
+ .bss           0x0080022e        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .bss           0x0080022e        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .bss           0x0080022e        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .bss           0x0080022e        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o)
+ .bss           0x0080022e        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_addsub_sf.o)
+ .bss           0x0080022e        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mul_sf.o)
+ .bss           0x0080022e        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_gt_sf.o)
+ .bss           0x0080022e        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_ge_sf.o)
+ .bss           0x0080022e        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_lt_sf.o)
+ .bss           0x0080022e        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_sf_to_si.o)
+ .bss           0x0080022e        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_thenan_sf.o)
+ .bss           0x0080022e        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_usi_to_sf.o)
+ .bss           0x0080022e        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
+ .bss           0x0080022e        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
+ .bss           0x0080022e        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clzsi2.o)
+ .bss           0x0080022e        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_pack_sf.o)
+ .bss           0x0080022e        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_unpack_sf.o)
+ .bss           0x0080022e        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fpcmp_parts_sf.o)
+ .bss           0x0080022e        0x0 d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clz.o)
  *(.bss*)
  .bss.num_of_cm_timer1
-                0x0080023c        0x4 ./MCAL/TIMER_1/TIMER1_program.o
-                0x0080023c                num_of_cm_timer1
+                0x0080022e        0x4 ./MCAL/TIMER_1/TIMER1_program.o
+                0x0080022e                num_of_cm_timer1
  .bss.num_of_ovf
-                0x00800240        0x4 ./MCAL/TIMER_1/TIMER1_program.o
+                0x00800232        0x4 ./MCAL/TIMER_1/TIMER1_program.o
  .bss.total_ticks
-                0x00800244        0x4 ./MCAL/TIMER_1/TIMER1_program.o
+                0x00800236        0x4 ./MCAL/TIMER_1/TIMER1_program.o
  .bss.counter.1439
-                0x00800248        0x4 ./MCAL/TIMER_1/TIMER1_program.o
+                0x0080023a        0x4 ./MCAL/TIMER_1/TIMER1_program.o
  .bss.num_of_cm
-                0x0080024c        0x4 ./MCAL/TIMER_0/TIMER0_program.o
-                0x0080024c                num_of_cm
+                0x0080023e        0x4 ./MCAL/TIMER_0/TIMER0_program.o
+                0x0080023e                num_of_cm
  .bss.num_of_ovf
-                0x00800250        0x4 ./MCAL/TIMER_0/TIMER0_program.o
+                0x00800242        0x4 ./MCAL/TIMER_0/TIMER0_program.o
  .bss.total_ticks
-                0x00800254        0x4 ./MCAL/TIMER_0/TIMER0_program.o
+                0x00800246        0x4 ./MCAL/TIMER_0/TIMER0_program.o
  .bss.counter_CTC.1368
-                0x00800258        0x4 ./MCAL/TIMER_0/TIMER0_program.o
+                0x0080024a        0x4 ./MCAL/TIMER_0/TIMER0_program.o
  .bss.counter_OVF.1381
-                0x0080025c        0x4 ./MCAL/TIMER_0/TIMER0_program.o
+                0x0080024e        0x4 ./MCAL/TIMER_0/TIMER0_program.o
  .bss.EXTI_pvINTCallBackFunc
-                0x00800260        0x6 ./MCAL/EXTI/EXTI_PROG.o
- .bss.index     0x00800266        0x1 ./APP/main.o
-                0x00800266                index
+                0x00800252        0x6 ./MCAL/EXTI/EXTI_PROG.o
+ .bss.Global_u16Temp
+                0x00800258        0x2 ./APP/main.o
+ .bss.Global_u16Ldr
+                0x0080025a        0x2 ./APP/main.o
+ .bss.flag      0x0080025c        0x2 ./APP/main.o
  *(COMMON)
- COMMON         0x00800267        0x2 ./MCAL/TIMER_1/TIMER1_program.o
-                0x00800267                TIMER1_CALL_BACK
- COMMON         0x00800269        0x6 ./MCAL/TIMER_0/TIMER0_program.o
-                0x00800269                TIMER0_CALL_BACK_2
-                0x0080026b                TIMER0_CALL_BACK
-                0x0080026d                TIMER0_CALL_BACK_1
- COMMON         0x0080026f        0x1 ./APP/main.o
-                0x0080026f                u8KpdOutput
-                0x00800270                PROVIDE (__bss_end, .)
-                0x000054b0                __data_load_start = LOADADDR (.data)
-                0x0000568c                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x0080025e        0x2 ./MCAL/TIMER_1/TIMER1_program.o
+                0x0080025e                TIMER1_CALL_BACK
+ COMMON         0x00800260        0x6 ./MCAL/TIMER_0/TIMER0_program.o
+                0x00800260                TIMER0_CALL_BACK_2
+                0x00800262                TIMER0_CALL_BACK
+                0x00800264                TIMER0_CALL_BACK_1
+                0x00800266                PROVIDE (__bss_end, .)
+                0x000058fa                __data_load_start = LOADADDR (.data)
+                0x00005ac8                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800270        0x0
-                0x00800270                PROVIDE (__noinit_start, .)
+.noinit         0x00800266        0x0
+                0x00800266                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x00800270                PROVIDE (__noinit_end, .)
-                0x00800270                _end = .
-                0x00800270                PROVIDE (__heap_start, .)
+                0x00800266                PROVIDE (__noinit_end, .)
+                0x00800266                _end = .
+                0x00800266                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -722,7 +716,7 @@ LOAD d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .signature
  *(.signature*)
 
-.stab           0x00000000     0x4e54
+.stab           0x00000000     0x5028
  *(.stab)
  .stab          0x00000000      0x798 ./MCAL/TIMER_1/TIMER1_program.o
  .stab          0x00000798      0x5f4 ./MCAL/TIMER_0/TIMER0_program.o
@@ -745,12 +739,12 @@ LOAD d:/imt/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
                                 0x2b8 (size before relaxing)
  .stab          0x000033a8      0xa80 ./HAL/BUZZER/BUZZER_program.o
                                 0xc18 (size before relaxing)
- .stab          0x00003e28     0x102c ./APP/main.o
-                               0x11c4 (size before relaxing)
+ .stab          0x00003e28     0x1200 ./APP/main.o
+                               0x1398 (size before relaxing)
 
-.stabstr        0x00000000     0x17a8
+.stabstr        0x00000000     0x17b4
  *(.stabstr)
- .stabstr       0x00000000     0x17a8 ./MCAL/TIMER_1/TIMER1_program.o
+ .stabstr       0x00000000     0x17b4 ./MCAL/TIMER_1/TIMER1_program.o
 
 .stab.excl
  *(.stab.excl)
